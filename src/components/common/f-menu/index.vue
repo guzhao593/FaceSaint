@@ -77,6 +77,7 @@ export default {
     display: flex;
     justify-content: flex-start;
     height: 1.066667rem;
+    padding: 0 .2rem;
     overflow-x: auto;
     /* 设置滚动条的样式 */
     &::-webkit-scrollbar {
