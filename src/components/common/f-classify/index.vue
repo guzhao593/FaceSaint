@@ -30,6 +30,9 @@ export default {
       border-bottom: 5px solid #ccc;
     }
     section{
+      position: fixed;
+      top: 1.733333rem;
+      width: 100vw;
       height: calc(100vh - 2rem);
       overflow: auto;
       background: #fff;

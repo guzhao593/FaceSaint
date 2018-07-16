@@ -1,9 +1,10 @@
 @import './var.scss';
-
 html, body, section, h1, h2, h3, h4, h5, h6, ul, li, ol, p, div, dl, dt, dd, input, textarea, select, form{
     margin: 0;
     padding: 0;
-    font-size: .213333rem;
+}
+body, section, h1, h2, h3, h4, h5, h6, ul, li, ol, p, div, dl, dt, dd, input, textarea, select, form{
+    font-size: 16px;
 }
 ul, li {
     list-style: none;

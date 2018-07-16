@@ -74,6 +74,10 @@ export default {
 </script>
 <style lang="scss" scoped>
   nav{
+    position: fixed;
+    top: .6rem;
+    left: 0;
+    width: 100vw;
     display: flex;
     justify-content: flex-start;
     height: 1.066667rem;

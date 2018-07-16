@@ -47,7 +47,12 @@ export default {
 <style lang="scss" scoped>
   @import 'style/var.scss';
   footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
     height: .6rem;
+    background: #fff;
     border-top: 1px solid #ccc;
     display: flex;
     justify-content: space-around;

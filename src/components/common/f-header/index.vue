@@ -18,6 +18,11 @@ export default {
 <style lang="scss" scoped>
   @import 'style/var.scss';
   header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100vw;
     display: flex;
     justify-content: space-between;
     line-height: .6rem;
