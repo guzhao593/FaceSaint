@@ -29,6 +29,7 @@ export default {
     height: .6rem;
     background: $main-color;
     aside{
+      font-size: .213333rem;
       text-indent: .266667rem;
       color: #fff;
     }
