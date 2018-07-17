@@ -27,7 +27,7 @@ export default {
     justify-content: flex-start;
     nav{
       background: #fff;
-      border-bottom: 5px solid #ccc;
+      border-bottom: .066667rem solid #ccc;
     }
     section{
       position: fixed;
