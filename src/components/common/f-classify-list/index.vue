@@ -3,6 +3,7 @@
     <div 
       v-for="(item, key) of list"
       :key="key"
+      @click="toLink(item)"
     >
       <div class="list-item">
         <span>{{item.name}}</span>
@@ -65,6 +66,11 @@ export default {
           name: 'css基础'
         },
       ]
+    }
+  },
+  methods: {
+    toLink (item) {
+      this.$router.push({path: '/knowledge-details', query: {knowledgeName: encodeURIComponent(item.name)}})
     }
   }
 }

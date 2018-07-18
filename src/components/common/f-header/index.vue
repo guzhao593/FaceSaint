@@ -1,6 +1,13 @@
 <template>
   <header>
-    <aside>首页</aside>
+    <aside>
+      <i 
+        v-if="showGoBack"
+        class="iconfont icon-fanhui"
+        @click="$router.go(-1)"
+      ></i>
+      <span>{{title}}</span>
+    </aside>
     <section>
       <i class="iconfont icon-sousuo"></i>
     </section>
@@ -9,6 +16,16 @@
 <script>
 export default {
   name: 'FHeader',
+  props: {
+    title: {
+      type: String,
+      default: '首页'
+    },
+    showGoBack: {
+      type: Boolean,
+      default: true
+    }
+  },
   data () {
     return {}
   }
@@ -32,6 +49,10 @@ export default {
       font-size: .213333rem;
       text-indent: .266667rem;
       color: #fff;
+      i{
+        font-size: .186667rem;
+        margin-right: .133333rem;
+      }
     }
     section{
       margin-right: .266667rem;

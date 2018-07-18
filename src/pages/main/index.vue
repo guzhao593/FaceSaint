@@ -1,6 +1,6 @@
 <template>
   <section>
-    <f-header></f-header>
+    <f-header :showGoBack="false"></f-header>
     <f-classify></f-classify>
   </section>
 </template>

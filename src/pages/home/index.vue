@@ -27,7 +27,6 @@
     height: 100vh;
     main{
       height: calc(100vh - .6rem);
-      background: #000;
     }
   }
 </style>
