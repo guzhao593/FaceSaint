@@ -76,13 +76,13 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+  @import 'style/var.scss';
   .list-item{
     height: .533333rem;
     line-height: .533333rem;
     border-bottom: 1px solid #ccc;
     padding: 0 .266667rem;
-    display: flex;
-    justify-content: space-between;
+    @include fj;
     .icon-box{
       svg{
         margin-left: .133333rem;

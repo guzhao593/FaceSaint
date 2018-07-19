@@ -20,10 +20,9 @@
 </script>
 
 <style lang="scss" scoped>
+  @import 'style/var.scss';
   section{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include fj(column);
     height: 100vh;
     main{
       height: calc(100vh - .6rem);

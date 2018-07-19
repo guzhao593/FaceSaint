@@ -20,9 +20,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import 'style/var.scss';
   section{
     height: 100%;
-    display: flex;
-    flex-direction: column;
+    @include fj(column);
   }
 </style>

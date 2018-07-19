@@ -73,13 +73,13 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+  @import 'style/var.scss';
   nav{
     position: fixed;
     top: .6rem;
     left: 0;
     width: 100vw;
-    display: flex;
-    justify-content: flex-start;
+    @include fj(row, flex-start);
     height: .8rem;
     padding: 0 .2rem;
     overflow-x: auto;
@@ -94,9 +94,7 @@ export default {
     div{
       flex-shrink: 0;
       width: .8rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      @include fj(column, center);
       text-align: center;
       .icon, .iconfont{
         align-self: center;

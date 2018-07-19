@@ -94,8 +94,7 @@ export default {
   .details{
     margin-top: .6rem;
     .details-classify{
-      display: flex;
-      justify-content: space-between;
+      @include fj;
       div{
         flex: 1;
         height: .4rem;
@@ -118,8 +117,7 @@ export default {
     }
   }
   .details-classify-children{
-    display: flex;
-    justify-content: space-between;
+    @include fj;
     div{
       flex: 1;
       height: .35rem;

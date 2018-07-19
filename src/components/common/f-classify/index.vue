@@ -22,9 +22,7 @@ export default {
   @import 'style/var.scss';
   .container{
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    @include fj(column, flex-start);
     nav{
       background: #fff;
       border-bottom: .066667rem solid #CFA41E;

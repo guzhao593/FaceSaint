@@ -54,14 +54,11 @@ export default {
     height: .6rem;
     background: #fff;
     border-top: 1px solid #ccc;
-    display: flex;
-    justify-content: space-around;
+    @include fj( row, space-around);
     div{
       flex: 1;
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      @include fj( column, center);
       i{
         font-size: .25rem;
       }

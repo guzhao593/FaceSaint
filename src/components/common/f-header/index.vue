@@ -40,8 +40,7 @@ export default {
     left: 0;
     z-index: 1000;
     width: 100vw;
-    display: flex;
-    justify-content: space-between;
+    @include fj( column);
     line-height: .6rem;
     height: .6rem;
     background: $main-color;
