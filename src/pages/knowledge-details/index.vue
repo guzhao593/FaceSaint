@@ -12,6 +12,19 @@
         {{item.name}}
         </div>
       </div>
+      <div
+        v-if="activeKey === 0"
+        class="details-classify-children"
+      >
+        <div 
+          v-for="(item, key) in classifyChildren"
+          :key="key"
+          :class="{active: activeChildrenKey === key}"
+          @click="handleClassifyChildren(key)"
+        >
+        {{item.name}}
+        </div>
+      </div>
       <div class="swiper-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide">Slide 1</div>
@@ -40,7 +53,14 @@ export default {
         {name: '基础知识'},
         {name: '相关文章'}
       ],
+      classifyChildren:[
+        {name: '综合'},
+        {name: '选择题'},
+        {name: '填空题'},
+        {name: '解答题'}
+      ],
       activeKey: 0,
+      activeChildrenKey: 0,
       swiper: null
     }
   },
@@ -58,12 +78,16 @@ export default {
     handleClassify (key) {
       this.activeKey = key
       this.swiper.slideTo(key, 500)
+    },
+    handleClassifyChildren (key) {
+      this.activeChildrenKey = key
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+  @import 'style/var.scss';
   .details{
     margin-top: .6rem;
     .details-classify{
@@ -76,17 +100,39 @@ export default {
         text-align: center;
         font-size: .16rem;
         color: #333;
-        border-right: 1px solid #eee;
-        background: #ddd;
+        border-bottom: 1px solid #eee;
       }
       div:last-child{
         border-right: 0 none;
       }
       .active{
-        background: #fdbf0b;
+        border-bottom: 1px solid $main-color;
+        color: $main-color;
       }
     }
   }
+  .details-classify-children{
+    display: flex;
+    justify-content: space-between;
+    div{
+      flex: 1;
+      height: .35rem;
+      line-height: .35rem;
+      text-align: center;
+      font-size: .16rem;
+      color: #333;
+      border-right: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      background: #fff;
+    }
+    div:last-child{
+      border-right: 0 none;
+    }
+    .active{
+      background: #efefef;
+    }
+  }
+
   .swiper-container {
     width: 100%;
     height: calc(100vh - 1.6rem);
