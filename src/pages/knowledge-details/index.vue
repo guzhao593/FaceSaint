@@ -9,7 +9,10 @@
           :class="{active: activeKey === key}"
           @click="handleClassify(key)"
         >
-        {{item.name}}
+          <svg class="icon" aria-hidden="true">
+              <use :xlink:href="item.icon"></use>
+          </svg>
+          <span>{{item.name}}</span>
         </div>
       </div>
       <div
@@ -49,9 +52,9 @@ export default {
     return {
       knowledgeName: decodeURIComponent(this.$route.query.knowledgeName),
       classify:[
-        {name: '面试题'},
-        {name: '基础知识'},
-        {name: '相关文章'}
+        {name: '面试题', icon: '#icon-mianshi'},
+        {name: '基础知识', icon: '#icon-jichu'},
+        {name: '相关文章', icon: '#icon-bokezhuanjia'}
       ],
       classifyChildren:[
         {name: '综合'},
@@ -98,9 +101,12 @@ export default {
         height: .4rem;
         line-height: .4rem;
         text-align: center;
-        font-size: .16rem;
+        font-size: .173333rem;
         color: #333;
         border-bottom: 1px solid #eee;
+        span{
+          padding-left: .04rem;
+        }
       }
       div:last-child{
         border-right: 0 none;

@@ -80,7 +80,7 @@ export default {
     width: 100vw;
     display: flex;
     justify-content: flex-start;
-    height: 1.066667rem;
+    height: .8rem;
     padding: 0 .2rem;
     overflow-x: auto;
     /* 设置滚动条的样式 */

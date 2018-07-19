@@ -27,11 +27,11 @@ export default {
     justify-content: flex-start;
     nav{
       background: #fff;
-      border-bottom: .066667rem solid #ccc;
+      border-bottom: .066667rem solid #CFA41E;
     }
     section{
       position: fixed;
-      top: 1.733333rem;
+      top: 1.466667rem;
       width: 100vw;
       height: calc(100vh - 2rem);
       overflow: auto;

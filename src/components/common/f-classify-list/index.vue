@@ -88,5 +88,8 @@ export default {
         margin-left: .133333rem;
       }
     }
+    span{
+      font-size: .186667rem;
+    }
   }
 </style>
