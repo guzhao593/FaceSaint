@@ -82,6 +82,7 @@ export default {
     @include fj(row, flex-start);
     height: .8rem;
     padding: 0 .2rem;
+    box-sizing: border-box;
     overflow-x: auto;
     /* 设置滚动条的样式 */
     &::-webkit-scrollbar {
