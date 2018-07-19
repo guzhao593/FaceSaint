@@ -40,7 +40,7 @@ export default {
     left: 0;
     z-index: 1000;
     width: 100vw;
-    @include fj( column);
+    @include fj;
     line-height: .6rem;
     height: .6rem;
     background: $main-color;
