@@ -8,3 +8,29 @@ $button-color: #F09B22;
   flex-direction: $direction;
   justify-content: $justify;
 }
+
+@mixin onePx ($c: #C7C7C7,$direction: all) {
+  &::after{
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200%;
+    color: $c;
+    height: 200%;
+    transform-origin: left top;
+    transform: scale(0.5);
+    @if $direction == top {
+      border-top: 1px solid $c;
+    } @else if $direction == bottom{
+      border-bottom: 1px solid $c;
+    } @else if $direction == right {
+      border-right: 1px solid $c;
+    } @else if $direction == left {
+      border-left: 1px solid $c;
+    } @else {
+      border: 1px solid $c;
+    }
+  }
+  
+}

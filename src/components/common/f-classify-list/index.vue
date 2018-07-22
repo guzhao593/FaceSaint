@@ -78,11 +78,13 @@ export default {
 <style lang="scss" scoped>
   @import 'style/var.scss';
   .list-item{
+    position: relative;
     height: .533333rem;
     line-height: .533333rem;
-    border-bottom: 1px solid #ccc;
+    // border-bottom: 1px solid #ccc;
     padding: 0 .266667rem;
     @include fj;
+    @include onePx(#c7c7c7, bottom);
     .icon-box{
       svg{
         margin-left: .133333rem;

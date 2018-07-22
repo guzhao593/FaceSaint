@@ -25,12 +25,14 @@
           :class="{active: activeChildrenKey === key}"
           @click="handleClassifyChildren(key)"
         >
-        {{item.name}}
+          {{item.name}}
         </div>
       </div>
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">Slide 1</div>
+          <div class="swiper-slide">
+            <interview-questions></interview-questions>
+          </div>
           <div class="swiper-slide">Slide 2</div>
           <div class="swiper-slide">Slide 3</div>
         </div>
@@ -41,12 +43,14 @@
 
 <script>
 import FHeader from 'common/f-header'
+import InterviewQuestions from 'components/knowledge-details/interview-questions'
 import Swiper from 'swiper'
 import 'swiper/dist/css/swiper.min.css'
 export default {
   name: 'KnowledgeDetails',
   components: {
-    FHeader
+    FHeader,
+    InterviewQuestions
   },
   data () {
     return {
@@ -92,7 +96,9 @@ export default {
 <style lang="scss" scoped>
   @import 'style/var.scss';
   .details{
+    @include fj(column, flex-start);
     margin-top: .6rem;
+    height: calc(100vh - 1.2rem);
     .details-classify{
       @include fj;
       div{
@@ -138,11 +144,10 @@ export default {
   }
 
   .swiper-container {
+    flex: 1;
     width: 100%;
-    height: calc(100vh - 1.6rem);
-    overflow: auto;
     .swiper-slide{
-      height: 100vh;
+      overflow: auto;
     }
   }  
 </style>
