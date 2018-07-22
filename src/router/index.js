@@ -2,7 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 const Home = () => import('pages/home')
 const Main = () => import('pages/main')
-const KnowledgeDetails = () => import('pages/knowledge-details')
+const Knowledge = () => import('pages/knowledge')
+const KnowledgeDetails = () => import('components/knowledge-details')
+const QuestionDetails = () => import('pages/question-details')
 Vue.use(Router)
 
 export default new Router({
@@ -19,9 +21,23 @@ export default new Router({
           component: Main
         },
         {
-          path: '/knowledge-details',
+          path: '/knowledge',
           name: '知识详情',
-          component: KnowledgeDetails
+          component: Knowledge,
+          redirect: '/knowledge/knowledge-details',
+          children: [
+            {
+              path: '/knowledge/knowledge-details',
+              name: '面试题详情',
+              component: KnowledgeDetails
+            },
+            {
+              path: '/knowledge/question-details',
+              name: '面试题详情',
+              component: QuestionDetails,
+              props: (route) => ({question: route.query})
+            }
+          ]
         }
       ]
     }

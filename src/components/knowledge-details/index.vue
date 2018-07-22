@@ -1,60 +1,53 @@
 <template>
-  <div>
-    <f-header :title="knowledgeName"></f-header>
-    <div class="details">
-      <div class="details-classify">
-        <div 
-          v-for="(item, key) in classify"
-          :key="key"
-          :class="{active: activeKey === key}"
-          @click="handleClassify(key)"
-        >
-          <svg class="icon" aria-hidden="true">
-              <use :xlink:href="item.icon"></use>
-          </svg>
-          <span>{{item.name}}</span>
-        </div>
-      </div>
-      <div
-        v-if="activeKey === 0"
-        class="details-classify-children"
+  <div class="details">
+    <div class="details-classify">
+      <div 
+        v-for="(item, key) in classify"
+        :key="key"
+        :class="{active: activeKey === key}"
+        @click="handleClassify(key)"
       >
-        <div 
-          v-for="(item, key) in classifyChildren"
-          :key="key"
-          :class="{active: activeChildrenKey === key}"
-          @click="handleClassifyChildren(key)"
-        >
-          {{item.name}}
-        </div>
+        <svg class="icon" aria-hidden="true">
+            <use :xlink:href="item.icon"></use>
+        </svg>
+        <span>{{item.name}}</span>
       </div>
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <interview-questions></interview-questions>
-          </div>
-          <div class="swiper-slide">Slide 2</div>
-          <div class="swiper-slide">Slide 3</div>
+    </div>
+    <div
+      v-if="activeKey === 0"
+      class="details-classify-children"
+    >
+      <div 
+        v-for="(item, key) in classifyChildren"
+        :key="key"
+        :class="{active: activeChildrenKey === key}"
+        @click="handleClassifyChildren(key)"
+      >
+        {{item.name}}
+      </div>
+    </div>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <interview-questions></interview-questions>
         </div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
       </div>
     </div>
   </div>
 </template>
-
 <script>
-import FHeader from 'common/f-header'
 import InterviewQuestions from 'components/knowledge-details/interview-questions'
 import Swiper from 'swiper'
 import 'swiper/dist/css/swiper.min.css'
 export default {
-  name: 'KnowledgeDetails',
+  name: 'Knowledge',
   components: {
-    FHeader,
     InterviewQuestions
   },
   data () {
     return {
-      knowledgeName: decodeURIComponent(this.$route.query.knowledgeName),
       classify:[
         {name: '面试题', icon: '#icon-mianshi'},
         {name: '基础知识', icon: '#icon-jichu'},
@@ -97,8 +90,6 @@ export default {
   @import 'style/var.scss';
   .details{
     @include fj(column, flex-start);
-    margin-top: .6rem;
-    height: calc(100vh - 1.2rem);
     .details-classify{
       @include fj;
       div{

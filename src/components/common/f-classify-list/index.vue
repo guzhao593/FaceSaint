@@ -70,7 +70,7 @@ export default {
   },
   methods: {
     toLink (item) {
-      this.$router.push({path: '/knowledge-details', query: {knowledgeName: encodeURIComponent(item.name)}})
+      this.$router.push({path: '/knowledge/knowledge-details', query: {knowledgeName: encodeURIComponent(item.name)}})
     }
   }
 }
@@ -81,10 +81,13 @@ export default {
     position: relative;
     height: .533333rem;
     line-height: .533333rem;
-    // border-bottom: 1px solid #ccc;
     padding: 0 .266667rem;
+    margin-bottom: 1px;
     @include fj;
     @include onePx(#c7c7c7, bottom);
+    &:active{
+      background: #f3f3f3;
+    }
     .icon-box{
       svg{
         margin-left: .133333rem;
