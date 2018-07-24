@@ -1,13 +1,8 @@
 <template>
-  <div>
-    <header>
-      <f-question-details :type="question.type"></f-question-details>
-      {{question.title}}
-    </header>
-  </div>
+  <f-question-details :question="question"></f-question-details>
 </template>
 <script>
-import FQuestionDetails from 'common/f-question-type'
+import FQuestionDetails from 'common/f-question-details'
 export default {
   name: 'QuestionDetails',
   components: {
@@ -17,15 +12,11 @@ export default {
     question: Object
   },
   data () {
-    return {}
+    return {
+    }
   }
 }
 </script>
 <style lang="scss" scoped>
-  div{
-    padding: .066667rem .133333rem;
-    header{
-      line-height: .4rem;
-    }
-  }
+
 </style>

@@ -24,7 +24,13 @@ export default {
       questionList: [
         {
           type: 0,
-          title: '元素的Alt和title有什么异同，选出正确的说法？'
+          title: '元素的Alt和title有什么异同，选出正确的说法？',
+          options: [
+            {option: 'A', content: 'Alt和title同时设置的时候，Alt作为图片的代替文字出现title是图片的解释文字'},
+            {option: 'B', content: 'Alt和title同时设置的时候，title作为图片的代替文字出现，Alt是图片的解释文字'},
+            {option: 'C', content: '以上说法都不正确'},
+          ],
+          answer: 'AB'
         },
         {
           type: 1,
