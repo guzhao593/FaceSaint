@@ -11,7 +11,7 @@ export default {
   },
   methods: {
     typeColor (type) {
-      return ['#ff5400', '#1e96d2', '#008000'][type]
+      return ['#ff5400', '#1e96d2', '#008000', '#9932CC'][type]
     },
   }
 }
