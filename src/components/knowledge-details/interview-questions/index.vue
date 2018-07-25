@@ -61,7 +61,8 @@ export default {
           type: 2,
           title: '有没有关注HTML5和CSS3？如有请简单说一些您对他们的了解情况！'
         }
-      ]
+      ],
+      questionTotal:25
     }
   },
   methods: {

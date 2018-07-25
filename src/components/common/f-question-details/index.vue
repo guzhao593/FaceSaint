@@ -6,6 +6,11 @@
     </header>
     <question-option :question="question" :isSee="isSee"></question-option>
     <div v-if="!isSee" class="see" @click="isSee = !isSee">查看答案</div>
+    <div class="change-question">
+      <div class="prev" @click="prev">上一题</div>
+      <div class="total">1/20</div>
+      <div class="next" @click="next">下一题</div>
+    </div>
   </div>
 </template>
 <script>
@@ -24,6 +29,10 @@ export default {
     return {
       isSee: false
     }
+  },
+  methods: {
+    prev () {},
+    next () {}
   }
 }
 </script>
@@ -44,6 +53,24 @@ export default {
       border-radius: .04rem;
       &:active{
         background: $main-color;
+      }
+    }
+    .change-question{
+      position: absolute;
+      bottom: .6rem;
+      left: 0px;
+      width: 100%;
+      height: .45rem;
+      line-height: .45rem;
+      background: $main-color;
+      color: #fff;
+      @include fj;
+      div{
+        font-size: .186667rem;
+      }
+      .prev, .next{
+        width: .8rem;
+        text-align: center;
       }
     }
   }
