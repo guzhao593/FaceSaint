@@ -56,7 +56,7 @@ export default {
       }
     }
     .change-question{
-      position: absolute;
+      position: fixed;
       bottom: .6rem;
       left: 0px;
       width: 100%;

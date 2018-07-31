@@ -9,7 +9,8 @@ export default {
   data () {
     return {
       selectAnswer: [0, 3].includes(this.question.type) && this.question.answer.length === 1 ? '' : [],
-      writeSpaceAnswer: []
+      writeSpaceAnswer: [],
+      writeAnswer: ''
     }
   },
   methods: {
@@ -73,7 +74,21 @@ export default {
                 </div>
               </section>)
     } else if (Number(type) === 2) {
-      return <section></section>
+      return (<section>
+                <div class="answer">你的答案：
+                  <div class="textarea" contenteditable="true">
+                    {this.writeAnswer}
+                  </div>
+                </div>
+                <div class="answer-box" v-show={this.isSee}>
+                  <div class="answer">正确答案：
+                    <div class="textarea" contenteditable="true">
+                      {answer}
+                    </div>
+                  </div>
+                  <div class="analysis">解析：{analysis}</div>
+                </div>
+              </section>)
     }
   }
 }

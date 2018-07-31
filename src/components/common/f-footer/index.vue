@@ -50,6 +50,7 @@ export default {
     position: fixed;
     bottom: 0;
     left: 0;
+    z-index: 1000;
     width: 100vw;
     height: .6rem;
     background: #fff;
