@@ -2,7 +2,7 @@
   <div class="question">
     <header>
       <f-question-type :type="question.type"></f-question-type>
-      {{question.title}}
+      <span v-html="question.title"></span>
     </header>
     <question-option :question="question" :isSee="isSee"></question-option>
     <div v-if="!isSee" class="see" @click="isSee = !isSee">查看答案</div>

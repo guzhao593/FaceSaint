@@ -39,7 +39,8 @@ module.exports = {
       'pages': resolve('src/pages'),
       'components': resolve('src/components'),
       'style': resolve('src/style'),
-      'common': resolve('src/components/common')
+      'common': resolve('src/components/common'),
+      'utils': resolve('src/utils')
     }
   },
   module: {

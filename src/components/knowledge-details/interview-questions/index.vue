@@ -6,7 +6,7 @@
     >
       <li @click="routerTo(question)">
         <f-question-details :type="question.type"></f-question-details>
-        <span>{{question.title}}</span>
+        <span v-html="question.title"></span>
       </li>
     </ul>
   </div>
@@ -35,7 +35,9 @@ export default {
         },
         {
           type: 1,
-          title: '合理的页面布局中常听过结构与表现分离，那么结构是____________，表现是__________。'
+          title: '合理的页面布局中常听过结构与表现分离，那么结构是<span class="space">①</span>，表现是<span class="space">②</span>。',
+          answer: ['html', 'css'],
+          analysis: ''
         },
         {
           type: 2,

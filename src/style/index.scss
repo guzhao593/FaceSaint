@@ -52,3 +52,10 @@ em, i { font-style: normal; }
  .animation_opactiy{
      animation: backOpacity 2s ease-in-out infinite;
  }
+
+ // 增空题空格选项的样式
+ .space{
+     border-bottom: 1px solid #333;
+     padding: 0 .8rem;
+     text-align: center;
+ }

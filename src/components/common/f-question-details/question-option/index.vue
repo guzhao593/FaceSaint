@@ -1,4 +1,5 @@
 <script>
+import {SPACE_VALUE} from 'utils/constants.js'
 export default {
   name: 'QuestionOption',
   props: {
@@ -7,7 +8,8 @@ export default {
   },
   data () {
     return {
-      selectAnswer: this.question.answer.length === 1 ? '' : []
+      selectAnswer: [0, 3].includes(this.question.type) && this.question.answer.length === 1 ? '' : [],
+      writeSpaceAnswer: []
     }
   },
   methods: {
@@ -53,7 +55,23 @@ export default {
                     </div>
                   </section>)
     } else if (Number(type) === 1) {
-      return <section></section>
+      const spaceList = (args) => {
+        return answer.map((answerContent, key) => {
+          return <div key={key} class="space-list">
+                    <span>{SPACE_VALUE[key]}</span>
+                    <div class="textarea" contenteditable={args === 'space' ? true : false}>
+                      {args === 'space' ? this.writeSpaceAnswer[key] : answerContent}
+                    </div>
+                </div>
+          })
+      }
+      return (<section>
+                <div class="answer">你的答案：<span>{spaceList('space')}</span></div>
+                <div class="answer-box" v-show={this.isSee}>
+                  <div class="answer">正确答案：<span>{spaceList('answer')}</span></div>
+                  <div class="analysis">解析：{this.writeSpaceAnswer.join(',')}</div>
+                </div>
+              </section>)
     } else if (Number(type) === 2) {
       return <section></section>
     }
@@ -99,11 +117,26 @@ export default {
     }
     .answer-box{
       .answer{
-        margin-bottom: .133333rem;
+        margin: .133333rem 0;
         span{
           color: $main-color;
         }
       }
+    }
+    .space-list{
+      @include fj;
+      margin-top: .133333rem;
+    }
+    .textarea{
+      flex:1;
+      min-height: 20px;
+      max-height: 300px;
+      border-bottom: 1px solid #333;
+      outline: none;
+      padding: 2px;
+      word-wrap: break-word;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
   }
 </style>
