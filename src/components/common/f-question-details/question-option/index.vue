@@ -10,7 +10,7 @@ export default {
     return {
       selectAnswer: [0, 3].includes(this.question.type) && this.question.answer.length === 1 ? '' : [],
       writeSpaceAnswer: [],
-      writeAnswer: ''
+      writeAskAnswer: ''
     }
   },
   methods: {
@@ -28,6 +28,12 @@ export default {
       } else {
         return this.selectAnswer.includes(option) ? 'selected' : ''
       }
+    },
+    changeSpaceAnswer (key, $event) {
+      this.writeSpaceAnswer[key] = $event.target.innerHTML
+    },
+    changeAskAnswer ($event) {
+      this.writeAskAnswer = $event.target.innerHTML
     }
   },
   render (h) {
@@ -60,8 +66,12 @@ export default {
         return answer.map((answerContent, key) => {
           return <div key={key} class="space-list">
                     <span>{SPACE_VALUE[key]}</span>
-                    <div class="textarea" contenteditable={args === 'space' ? true : false}>
-                      {args === 'space' ? this.writeSpaceAnswer[key] : answerContent}
+                    <div
+                      class="textarea"
+                      contenteditable={args === 'space' ? !this.isSee : false}
+                      onKeyup={this.changeSpaceAnswer.bind(this, key)}
+                    >
+                      {args === 'space' ? '' : answerContent}
                     </div>
                 </div>
           })
@@ -70,19 +80,22 @@ export default {
                 <div class="answer">你的答案：<span>{spaceList('space')}</span></div>
                 <div class="answer-box" v-show={this.isSee}>
                   <div class="answer">正确答案：<span>{spaceList('answer')}</span></div>
-                  <div class="analysis">解析：{this.writeSpaceAnswer.join(',')}</div>
+                  <div class="analysis">解析：{analysis}</div>
                 </div>
               </section>)
     } else if (Number(type) === 2) {
       return (<section>
                 <div class="answer">你的答案：
-                  <div class="textarea" contenteditable="true">
-                    {this.writeAnswer}
+                  <div
+                    class="textarea"
+                    contenteditable={!this.isSee}
+                    onKeyup={this.changeAskAnswer}
+                  >
                   </div>
                 </div>
                 <div class="answer-box" v-show={this.isSee}>
                   <div class="answer">正确答案：
-                    <div class="textarea" contenteditable="true">
+                    <div class="textarea" contenteditable="false">
                       {answer}
                     </div>
                   </div>
