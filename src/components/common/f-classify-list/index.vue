@@ -70,6 +70,7 @@ export default {
   },
   methods: {
     toLink (item) {
+      this.$store.commit('SELECT_KNOWLEDGE_NAME', item.name)
       this.$router.push({path: '/knowledge/knowledge-details', query: {knowledgeName: encodeURIComponent(item.name)}})
     }
   }

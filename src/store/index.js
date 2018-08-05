@@ -1,24 +1,22 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { SELECT_KNOWLEDGE_NAME, SELECT_QUESTION_INFO } from './constants/mutation-type'
 Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
-    count: 0
+    knowledgeName: '',
+    questionInfo: {}
   },
-  getter: {
-    total (state) {
-      return state.count++
-    }
+  getters: {
   },
-  mutation: {
-    increment (state) {
-      // 变更状态
-      state.count++
+  mutations: {
+    [SELECT_KNOWLEDGE_NAME] (state, payload) {
+      state.knowledgeName = payload
+    },
+    [SELECT_QUESTION_INFO] (state, payload) {
+      state.questionInfo = payload
     }
   },
   action: {
-    increment (context) {
-      context.commit('increment')
-    }
   }
 })

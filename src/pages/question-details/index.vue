@@ -8,11 +8,9 @@ export default {
   components: {
     FQuestionDetails
   },
-  props: {
-    question: Object
-  },
   data () {
     return {
+      question: this.$store.state.questionInfo
     }
   }
 }

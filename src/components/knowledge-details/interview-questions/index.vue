@@ -72,6 +72,7 @@ export default {
       return ['#ff5400', '#1e96d2', '#008000'][type]
     },
     routerTo (question) {
+      this.$store.commit('SELECT_QUESTION_INFO', question)
       this.$router.push({path: '/knowledge/question-details', query: question})
     }
   }

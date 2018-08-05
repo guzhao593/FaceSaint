@@ -18,7 +18,11 @@
     },
     data () {
       return {
-        knowledgeName: decodeURIComponent(this.$route.query.knowledgeName)
+      }
+    },
+    computed: {
+      knowledgeName () {
+        return this.$store.state.knowledgeName
       }
     }
   }
